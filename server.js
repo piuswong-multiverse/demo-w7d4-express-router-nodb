@@ -1,7 +1,7 @@
 // Server for API to handle getting User data
 const express = require('express');
 const usersRouter = require('./routes/users');
-
+const fruitsRouter = require('./routes/fruits');
 const app = express();
 
 // set up endpoints
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use('/users', usersRouter);
-
+app.use('/fruits', fruitsRouter);
 
 const port = 3000;
 app.listen(port, () => {
