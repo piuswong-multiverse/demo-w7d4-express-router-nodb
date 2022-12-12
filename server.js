@@ -6,6 +6,10 @@ const app = express();
 
 // set up endpoints
 // use router as middleware
+// use middleware to properly understand request body!
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 app.use('/users', usersRouter);
 
 
